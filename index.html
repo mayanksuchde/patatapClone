@@ -3,20 +3,35 @@
 <head>
 	<title>circle</title>
 	<script type="text/javascript" src="paper-full.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
 	<script type="text/paperscript" canvas="myCanvas">
 
-		for(var i=0;i<=2000;i+=100){
-			for(var j=0;j<=5000;j+=100){
+		var circles=[];
+		function onKeyDown(event){
+
+			var maxPoint=new Point(view.size.width,view.size.height);
+			var randomPoint=Point.random();
+			var point=maxPoint*randomPoint;
+			var newCircle=new Path.Circle(point,300);
+			newCircle.fillColor="orange";
+			circles.push(newCircle);
+
 			
-				for(k=0;k<=255;k++){
-					var myCircle= new Path.Circle(new Point(i,j),10);
-					myCircle.fillColor= new Color(0,0,k);
+	} 
+
+
+
+			function onFrame(event){
+				for(var i=0;i<circles.length;i++){
+					circles[i].fillColor.hue+=1;
+					circles[i].scale(0.9);
+			
 			}
-				
-		};
+			
+		}
 		
-	};
+					
+	
 		
 	</script>
 </head>
