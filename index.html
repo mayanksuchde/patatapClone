@@ -3,7 +3,8 @@
 <head>
 	<title>circle</title>
 	<script type="text/javascript" src="paper-full.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="howler.min.js"></script>
 	<script type="text/paperscript" canvas="myCanvas">
 
 		var circles=[];
@@ -24,7 +25,7 @@
 			function onFrame(event){
 				for(var i=0;i<circles.length;i++){
 					circles[i].fillColor.hue+=1;
-					circles[i].scale(0.9);
+					circles[i].scale(0.99);
 			
 			}
 			
